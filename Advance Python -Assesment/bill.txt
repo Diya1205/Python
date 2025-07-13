@@ -1,0 +1,8 @@
+Product	Qty	Price
+Bath Soap	1	40
+Face Cream	1	40
+Face Wash	1	40
+Hair Spray	1	40
+Body Lotion	1	40
+
+Total: ₹ 200
