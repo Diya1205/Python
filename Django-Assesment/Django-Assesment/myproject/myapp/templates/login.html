@@ -1,0 +1,24 @@
+{% extends "base_auth.html" %}
+{% load static %}
+{% block title %}Log In - Digital Society{% endblock %}
+
+{% block content %}
+<div class="auth-box">
+    <h2 class="text-center">Log in</h2>
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="username" placeholder="Username" required>
+            {% comment %} <label for="floatingInput">Username</label> {% endcomment %}
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" name="password" placeholder="Password" required>
+            {% comment %} <label for="floatingPassword">Password</label> {% endcomment %}
+        </div>
+        <button type="submit" class="btn btn-info w-100 py-2 text-white">SIGN IN</button>
+    </form>
+    <div class="text-center mt-3">
+        <a href="{% url 'forgot_password' %}">Forgot Password?</a>
+    </div>
+</div>
+{% endblock %}

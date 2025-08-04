@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Confirm Deletion{% endblock %}
+{% block header %}Confirm Deletion{% endblock %}
+
+{% block content %}
+<div class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">Warning!</h4>
+    <p>Are you sure you want to delete the notice titled <strong>"{{ notice.subject }}"</strong>?</p>
+    <hr>
+    <form method="post" action="{% url 'delete_notice' notice.id %}">
+        {% csrf_token %}
+        <p class="mb-0">
+            Please type "Y" to confirm deletion or "N" to cancel.
+            <input type="text" name="confirmation" class="form-control my-2" required>
+        </p>
+        <button type="submit" class="btn btn-danger mt-3">Delete Notice</button>
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary mt-3">Cancel</a>
+    </form>
+</div>
+{% endblock %}

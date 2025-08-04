@@ -1,0 +1,1 @@
+# email_utils.py for Digital Society - reusable email logic 
